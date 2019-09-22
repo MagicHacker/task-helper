@@ -1,0 +1,24 @@
+<view class="count-wrap">
+    <view class="count-navBar">
+        <view class="count-btn">周</view>
+        <view class="count-btn">月</view>
+        <view class="count-btn">年</view>
+    </view>
+    <view class="count-time-navBar">
+        <view class="count-previous">上周</view>
+        <view class="count-next">本周</view>
+    </view>
+    <view class="count-chart">
+        <canvas class="count-canvas" canvas-id="count-hours"></canvas>
+    </view>
+    <view class="count-hour-list">
+        <view class="count-hour-title">项目耗时排行榜</view>
+        <view class="count-task-list" wx:for="{{[1,2,3]}}" wx:key="*this">
+            <image class="count-task-img" src="/images/design.svg" />
+            <view class="count-task-content">
+                <view>不知道的任务</view>
+                <view>28.0</view>
+            </view>
+        </view>
+    </view>
+</view>

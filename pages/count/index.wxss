@@ -1,0 +1,84 @@
+.count-wrap {
+  width: 100%;
+  height: 100%;
+}
+.count-navBar {
+  width: 100%;
+  height: 120rpx;
+  box-sizing: border-box;
+  padding: 0rpx 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fddb43;
+}
+.count-btn {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #f5da5a;
+  color: #000;
+  border: 2rpx solid #000;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.count-active {
+  color: #fddb43;
+  background-color: #000;
+}
+.count-time-navBar {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #000;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 40rpx;
+}
+.count-previous,
+.count-next {
+  width: 70rpx;
+  height: 100%;
+  border-bottom: 8rpx solid #000;
+  margin-right: 30rpx;
+}
+.count-hour-list {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 20rpx 0rpx 40rpx;
+}
+.count-hour-title {
+  font-size: 36rpx;
+  color: #333;
+}
+.count-task-list {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.count-task-img {
+  width: 40rpx;
+  height: 40rpx;
+}
+.count-task-content {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1rpx solid #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20rpx;
+}
+.count-chart {
+  width: 100%;
+  height: 600rpx;
+  box-sizing: border-box;
+  padding: 40rpx 0rpx 0rpx 20rpx;
+}
+.count-canvas {
+  width: 350px;
+  height: 250px;
+}
