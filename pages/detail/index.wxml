@@ -1,0 +1,31 @@
+<view class="detail-wrap">
+    <view class="detail-top">
+        <picker class="detail-picker" mode="date" value="{{date}}" bindchange="changeDate">
+            {{date}}
+            <image class="detail-trian" src="/images/inverted-trian.svg" />
+        </picker>
+        <view class="detail-use-time">
+            <view>
+                <view>预计耗时</view>
+                <view>8.5</view>
+            </view>
+            <view>
+                <view>实际耗时</view>
+                <view>382.5</view>
+            </view>
+        </view>
+    </view>
+    <view class="detail-content" wx:for="{{detailList}}" wx:key="*this">
+        <view class="detail-date">
+            <view class="">{{item.date}}</view>
+            <view class="">耗时：{{item.hour}}</view>
+        </view>
+        <view class="detail-list" wx:for="{{item.itemList}}" wx:key="*this" wx:for-item="val">
+            <image class="detail-image" src="/images/make.svg" />
+            <view class="detail-list-item">
+                <view class="detail-title">{{val.title}}</view>
+                <image class="detail-arrow" src="/images/arrow-right.svg" />
+            </view>
+        </view>
+    </view>
+</view>
