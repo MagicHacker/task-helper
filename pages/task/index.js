@@ -14,5 +14,11 @@ Page({
   onShareAppMessage: function() {},
   onPageScroll: function() {},
   //item(index,pagePath,text)
-  onTabItemTap: function(item) {}
+  onTabItemTap: function(item) {},
+  // 跳转到详情页
+  navigateToDetail() {
+    wx.navigateTo({
+      url: "/pages/task-detail/index"
+    });
+  }
 });

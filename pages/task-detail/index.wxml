@@ -1,0 +1,36 @@
+<view class="task-detail-wrap">
+    <view class="task-detail-title">我的任务</view>
+    <view class="task-detail-content">
+        <view class="task-detail-item">
+            <view>开始日期</view>
+            <picker class="task-start-time" mode="date" value="{{startDate}}" bindchange="chooseStartDate">
+                {{startDate}}
+            </picker>
+        </view>
+        <view class="task-detail-item">
+            <view>结束日期</view>
+            <picker class="task-end-time" mode="date" value="{{endDate}}" bindchange="chooseEndDate">
+                {{endDate}}
+            </picker>
+        </view>
+        <view class="task-detail-item">
+            <view>项目类型</view>
+            <input type="text" class="task-project-type" placeholder="开发" />
+        </view>
+        <view class="task-detail-item">
+            <view>执行岗位</view>
+            <picker class="task-station" mode="selector" range="{{stationRange}}" value="{{stationIndex}}" bindchange="chooseStation">
+                {{stationRange[stationIndex]}}
+            </picker>
+        </view>
+        <view class="task-detail-item">
+            <view>项目耗时</view>
+            <input class="task-hour" type="text" placeholder="小时" />
+        </view>
+        <view class="task-detail-item">
+            <view>项目描述</view>
+            <textarea class="task-description" auto-height="true" cols="25" rows="10" placeholder="任务描述"></textarea>
+        </view>
+    </view>
+    <button class="task-detail-save">保存</button>
+</view>

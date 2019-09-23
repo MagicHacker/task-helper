@@ -1,0 +1,56 @@
+.task-detail-wrap {
+  width: 100%;
+  height: 100%;
+}
+.task-detail-title {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fddb43;
+}
+.task-detail-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40rpx 0rpx 0rpx 40rpx;
+}
+.task-detail-item {
+  width: 100%;
+  min-height: 160rpx;
+  display: flex;
+  align-items: center;
+  color: #979797;
+  border-bottom: 1rpx solid #f4f4f4;
+  font-size: 40rpx;
+}
+.task-start-time,
+.task-end-time,
+.task-project-type,
+.task-station,
+.task-hour {
+  height: 44rpx;
+  line-height: 44rpx;
+  margin-left: 40rpx;
+  color: #000;
+}
+.task-description {
+  width: 400rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  margin-left: 40rpx;
+  color: #000;
+}
+.task-detail-save {
+  width: 160rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 30rpx auto 0rpx;
+  border-radius: 16rpx;
+  background: #fddb43;
+  padding: 0rpx;
+  text-align: center;
+}
+.task-detail-save:after {
+  border: none;
+}

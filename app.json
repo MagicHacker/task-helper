@@ -3,7 +3,8 @@
     "pages/task/index",
     "pages/detail/index",
     "pages/count/index",
-    "pages/personal-center/index"
+    "pages/personal-center/index",
+    "pages/task-detail/index"
   ],
   "window": {},
   "tabBar": {

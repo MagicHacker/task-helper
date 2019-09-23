@@ -1,5 +1,5 @@
 <view class="task-wrap">
-    <view class="task-list" wx:for="{{taskList}}" wx:key="*this">
+    <view class="task-list" wx:for="{{taskList}}" wx:key="*this" bindtap="navigateToDetail">
         <view class="task-content">
             <view class="task-order">{{index < 9 ? '0' + (index+ 1) : index + 1}}</view>
             <view class="task-title">北京实创科技有限公司</view>
