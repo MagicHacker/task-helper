@@ -1,6 +1,9 @@
 //Page Object
 Page({
-  data: {},
+  data: {
+    avatarUrl: null,
+    nickName: ""
+  },
   //options(Object)
   onLoad: function(options) {},
   onReady: function() {},
@@ -12,5 +15,16 @@ Page({
   onShareAppMessage: function() {},
   onPageScroll: function() {},
   //item(index,pagePath,text)
-  onTabItemTap: function(item) {}
+  onTabItemTap: function(item) {},
+  // 获取用户授权信息
+  getUserInfo() {
+    wx.getUserInfo({
+      success: res => {
+        this.setData({
+          avatarUrl: res.userInfo.avatarUrl,
+          nickName: res.userInfo.nickName
+        });
+      }
+    });
+  }
 });

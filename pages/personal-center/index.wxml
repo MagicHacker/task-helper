@@ -1,7 +1,9 @@
 <view class="personal-wrap">
     <view class="personal-top">
         <view class="personal-avatar">
-            <image class="avatar-image" src="/images/design.svg" />
+            <button class="avatar-btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                <image class="avatar-image" src="{{avatarUrl ? avatarUrl: '/images/login.svg' }}" />
+            </button>
         </view>
     </view>
     <view class="personal-message">
@@ -38,8 +40,8 @@
         <view class="personal-list">
             <image class="personal-image" src="/images/wechat.svg" />
             <view class="personal-list-content">
-                <text>微信</text>
-                <text>轩少</text>
+                <text>微信名</text>
+                <text>{{nickName}}</text>
             </view>
         </view>
     </view>
