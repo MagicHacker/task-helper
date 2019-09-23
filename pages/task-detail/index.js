@@ -45,5 +45,9 @@ Page({
     this.setData({
       stationIndex: event.detail.value
     });
-  }
+  },
+  // 保存任务
+  saveTask() {},
+  //删除任务
+  deleteTask() {}
 });

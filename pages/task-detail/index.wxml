@@ -32,5 +32,15 @@
             <textarea class="task-description" auto-height="true" cols="25" rows="10" placeholder="任务描述"></textarea>
         </view>
     </view>
-    <button class="task-detail-save">保存</button>
+    <view class="task-detail-operation">
+        <view class="task-detail-save" bindtap="saveTask">
+            <image class="task-detail-image" src="/images/save.svg" />
+            <view>保存</view>
+        </view>
+        <view class="task-detail-line"></view>
+        <view class="task-detail-delete" bindtap="deleteTask">
+            <image class="task-detail-image" src="/images/delete.svg" />
+            <view>删除</view>
+        </view>
+    </view>
 </view>
