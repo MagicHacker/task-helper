@@ -15,16 +15,16 @@
             </view>
         </view>
     </view>
-    <view class="detail-content" wx:for="{{detailList}}" wx:key="*this">
+    <view class="detail-content">
         <view class="detail-date">
-            <view class="">{{item.date}}</view>
-            <view class="">耗时：{{item.hour}}</view>
+            <view>{{date}}</view>
+            <view>耗时：{{hour}}</view>
         </view>
-        <view class="detail-list" wx:for="{{item.itemList}}" wx:key="*this" wx:for-item="val">
+        <view class="detail-list" wx:for="{{itemList}}" wx:key="*this">
             <image class="detail-image" src="/images/make.svg" />
             <view class="detail-list-item">
-                <view class="detail-title">{{val.title}}</view>
-                <image class="detail-arrow" src="/images/arrow-right.svg" />
+                <view class="detail-title">{{item.title}}</view>
+                <view>+{{item.hour}}</view>
             </view>
         </view>
     </view>
