@@ -12,7 +12,7 @@
         <canvas class="count-canvas" canvas-id="count-hours"></canvas>
     </view>
     <view class="count-hour-list">
-        <view class="count-hour-title">项目耗时排行榜</view>
+        <view class="count-hour-title">项目实际耗时排行榜</view>
         <view class="count-task-list" wx:for="{{[1,2,3]}}" wx:key="*this">
             <image class="count-task-img" src="/images/design.svg" />
             <view class="count-task-content">

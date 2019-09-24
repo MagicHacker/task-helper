@@ -7,7 +7,7 @@ Page({
       { title: "原型-首页模块", hour: 8 },
       { title: "原型-首页模块", hour: 8 }
     ],
-    date: "2019-09-09"
+    date: "选择时间"
   },
   //options(Object)
   onLoad: function(options) {},

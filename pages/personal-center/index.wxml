@@ -18,7 +18,7 @@
             <image class="personal-image" src="/images/name.svg" />
             <view class="personal-list-content">
                 <text>真实姓名</text>
-                <input class="personal-input" type="text" placeholder="姓名" />
+                <input class="personal-input" type="text" placeholder="请填写" />
             </view>
         </view>
     </view>
@@ -27,14 +27,14 @@
             <image class="personal-image" src="/images/gender.svg" />
             <view class="personal-list-content border-bottom">
                 <text>性别</text>
-                <input class="personal-input" type="text" placeholder="男" />
+                <input class="personal-input" type="text" placeholder="请填写" />
             </view>
         </view>
         <view class="personal-list">
             <image class="personal-image" src="/images/phone.svg" />
             <view class="personal-list-content border-bottom">
                 <text>手机号</text>
-                <input class="personal-input" type="text" placeholder="17710924517" />
+                <input class="personal-input" type="text" placeholder="请填写" />
             </view>
         </view>
         <view class="personal-list">
