@@ -1,11 +1,16 @@
 <view class="task-wrap">
-    <view class="task-list" wx:for="{{taskList}}" wx:key="*this" bindtap="navigateToDetail">
-        <view class="task-content">
-            <view class="task-order">{{index < 9 ? '0' + (index+ 1) : index + 1}}</view>
-            <view class="task-title">构建首页</view>
-            <image class="task-right" src="/images/arrow-right.svg" lazy-load="false" />
+    <block wx:if="{{taskList.length === 0}}">
+        <view class="task-none">~暂无任务请添加~</view>
+    </block>
+    <block wx:else>
+        <view class="task-list" wx:for="{{taskList}}" wx:key="*this" bindtap="navigateToDetail">
+            <view class="task-content">
+                <view class="task-order">{{index < 9 ? '0' + (index+ 1) : index + 1}}</view>
+                <view class="task-title">构建首页</view>
+                <image class="task-right" src="/images/arrow-right.svg" lazy-load="false" />
+            </view>
+            <view class="task-line"></view>
         </view>
-        <view class="task-line"></view>
-    </view>
+    </block>
     <image class="task-add" src="/images/add.svg" bindtap="addTask" />
 </view>

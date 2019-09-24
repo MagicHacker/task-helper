@@ -1,6 +1,7 @@
 .count-wrap {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 .count-navBar {
   width: 100%;
@@ -81,4 +82,15 @@
 .count-canvas {
   width: 350px;
   height: 250px;
+}
+.count-none {
+  width: 200rpx;
+  height: 80rpx;
+  font-size: 32rpx;
+  color: rgb(133, 133, 133);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -100rpx;
+  margin-top: -40rpx;
 }
