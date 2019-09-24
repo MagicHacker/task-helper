@@ -14,7 +14,6 @@ Page({
   onReachBottom: function() {},
   onShareAppMessage: function() {},
   onPageScroll: function() {},
-  //item(index,pagePath,text)
   onTabItemTap: function(item) {},
   // 跳转到详情页
   navigateToDetail() {

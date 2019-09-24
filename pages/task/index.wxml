@@ -1,6 +1,6 @@
 <view class="task-wrap">
     <block wx:if="{{taskList.length === 0}}">
-        <view class="task-none">~暂无任务请添加~</view>
+        <view class="task-none">~暂无数据请添加~</view>
     </block>
     <block wx:else>
         <view class="task-list" wx:for="{{taskList}}" wx:key="*this" bindtap="navigateToDetail">
