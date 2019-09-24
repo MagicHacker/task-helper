@@ -4,7 +4,8 @@
     "pages/detail/index",
     "pages/count/index",
     "pages/personal-center/index",
-    "pages/task-detail/index"
+    "pages/task-detail/index",
+    "pages/add-task/index"
   ],
   "window": {},
   "tabBar": {

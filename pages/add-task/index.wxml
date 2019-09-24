@@ -1,0 +1,85 @@
+<view class="add-task-wrap">
+    <view class="task-type-first">
+        <view class="task-type-list">
+            <view class="task-type-item">
+                <image class="task-type-image" src="/images/product.svg" />
+            </view>
+            <text>产品</text>
+        </view>
+        <view class="task-type-list">
+            <view class="task-type-item">
+                <image class="task-type-image" src="/images/design.svg" />
+            </view>
+            <text>设计</text>
+        </view>
+        <view class="task-type-list">
+            <view class="task-type-item">
+                <image class="task-type-image" src="/images/front.svg" />
+            </view>
+            <text>前端</text>
+        </view>
+        <view class="task-type-list">
+            <view class="task-type-item">
+                <image class="task-type-image" src="/images/end.svg" />
+            </view>
+            <text>后端</text>
+        </view>
+    </view>
+    <view class="task-type-second">
+        <view class="task-type-list">
+            <view class="task-type-item">
+                <image class="task-type-image" src="/images/test.svg" />
+            </view>
+            <text>测试</text>
+        </view>
+        <view class="task-type-list">
+            <view class="task-type-item">
+                <image class="task-type-image" src="/images/make.svg" />
+            </view>
+            <text>制作</text>
+        </view>
+        <view class="task-type-list">
+            <view class="task-type-item">
+                <image class="task-type-image" src="/images/modify.svg" />
+            </view>
+            <text>修改</text>
+        </view>
+        <view class="task-type-list">
+            <view class="task-type-item">
+                <image class="task-type-image" src="/images/meeting.svg" />
+            </view>
+            <text>会议</text>
+        </view>
+    </view>
+    <view class="task-detail-list">
+        <view class="task-detail-item">
+            <text>任务名称</text>
+            <input class="task-name" type="text" placeholder="请填写" />
+        </view>
+        <view class="task-detail-item">
+            <text>开始日期</text>
+            <picker class="task-start-time" mode="date" value="{{startDate}}" bindchange="chooseStartDate">
+                {{startDate}}
+            </picker>
+        </view>
+        <view class="task-detail-item">
+            <text>结束日期</text>
+            <picker class="task-end-time" mode="date" value="{{startDate}}" bindchange="chooseEndDate">
+                {{endDate}}
+            </picker>
+        </view>
+        <view class="task-detail-item">
+            <text>项目类型</text>
+            <input class="task-type" type="text" placeholder="请填写" />
+        </view>
+        <view class="task-detail-item">
+            <text>预计耗时</text>
+            <input class="task-hour" type="text" placeholder="请填写" />
+        </view>
+        <view class="task-detail-item">
+            <text>任务描述</text>
+            <textarea class="task-description" auto-height="true" cols="25" rows="10" placeholder="请填写"></textarea>
+        </view>
+    </view>
+    <view class="task-save">保存</view>
+</view>
