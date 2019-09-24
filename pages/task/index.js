@@ -20,5 +20,11 @@ Page({
     wx.navigateTo({
       url: "/pages/task-detail/index"
     });
+  },
+  // 添加任务
+  addTask() {
+    wx.navigateTo({
+      url: "/pages/add-task/index"
+    });
   }
 });

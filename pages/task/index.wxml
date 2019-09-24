@@ -2,10 +2,10 @@
     <view class="task-list" wx:for="{{taskList}}" wx:key="*this" bindtap="navigateToDetail">
         <view class="task-content">
             <view class="task-order">{{index < 9 ? '0' + (index+ 1) : index + 1}}</view>
-            <view class="task-title">北京实创科技有限公司</view>
+            <view class="task-title">构建首页</view>
             <image class="task-right" src="/images/arrow-right.svg" lazy-load="false" />
         </view>
         <view class="task-line"></view>
     </view>
-    <image class="task-add" src="/images/add.svg" />
+    <image class="task-add" src="/images/add.svg" bindtap="addTask" />
 </view>

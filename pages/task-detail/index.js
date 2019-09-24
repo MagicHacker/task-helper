@@ -2,19 +2,7 @@
 Page({
   data: {
     startDate: "请选择",
-    endDate: "请选择",
-    stationIndex: 0,
-    stationRange: [
-      "请选择",
-      "产品",
-      "设计",
-      "前端",
-      "后端",
-      "测试",
-      "制作",
-      "修改",
-      "会议"
-    ]
+    endDate: "请选择"
   },
   //options(Object)
   onLoad: function(options) {},
@@ -38,12 +26,6 @@ Page({
   chooseEndDate(event) {
     this.setData({
       endDate: event.detail.value
-    });
-  },
-  // 选择岗位
-  chooseStation(event) {
-    this.setData({
-      stationIndex: event.detail.value
     });
   },
   // 保存任务

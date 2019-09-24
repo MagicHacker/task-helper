@@ -1,6 +1,9 @@
 <view class="task-detail-wrap">
-    <view class="task-detail-title">我的任务</view>
     <view class="task-detail-content">
+        <view class="task-detail-item">
+            <view>任务名称</view>
+            <input type="text" class="task-name" placeholder="请填写" />
+        </view>
         <view class="task-detail-item">
             <view>开始日期</view>
             <picker class="task-start-time" mode="date" value="{{startDate}}" bindchange="chooseStartDate">
@@ -18,18 +21,16 @@
             <input type="text" class="task-project-type" placeholder="开发" />
         </view>
         <view class="task-detail-item">
-            <view>执行岗位</view>
-            <picker class="task-station" mode="selector" range="{{stationRange}}" value="{{stationIndex}}" bindchange="chooseStation">
-                {{stationRange[stationIndex]}}
-            </picker>
-        </view>
-        <view class="task-detail-item">
-            <view>项目耗时</view>
+            <view>预计耗时</view>
             <input class="task-hour" type="text" placeholder="小时" />
         </view>
         <view class="task-detail-item">
-            <view>项目描述</view>
-            <textarea class="task-description" auto-height="true" cols="25" rows="10" placeholder="任务描述"></textarea>
+            <view>实际耗时</view>
+            <input class="task-hour" type="text" placeholder="小时" />
+        </view>
+        <view class="task-detail-item">
+            <view>任务描述</view>
+            <textarea class="task-description" auto-height="true" cols="25" rows="10" placeholder="请填写"></textarea>
         </view>
     </view>
     <view class="task-detail-operation">

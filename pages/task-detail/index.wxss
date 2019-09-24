@@ -17,18 +17,18 @@
 }
 .task-detail-item {
   width: 100%;
-  min-height: 160rpx;
+  height: 120rpx;
   display: flex;
   align-items: center;
   color: #979797;
   border-bottom: 1rpx solid #f4f4f4;
-  font-size: 40rpx;
+  font-size: 32rpx;
 }
 .task-start-time,
 .task-end-time,
-.task-project-type,
-.task-station,
-.task-hour {
+.task-name,
+.task-hour,
+.task-project-type {
   height: 44rpx;
   line-height: 44rpx;
   margin-left: 40rpx;
