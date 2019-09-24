@@ -29,7 +29,55 @@ Page({
     });
   },
   // 保存任务
-  saveTask() {},
+  saveTask() {
+    wx.showToast({
+      title: "保存成功",
+      icon: "success",
+      image: "",
+      duration: 1500,
+      mask: false,
+      success: result => {
+        wx.reLaunch({
+          url: "/pages/task/index",
+          success: result => {},
+          fail: () => {},
+          complete: () => {}
+        });
+      },
+      fail: () => {},
+      complete: () => {}
+    });
+  },
   //删除任务
-  deleteTask() {}
+  deleteTask() {
+    wx.showModal({
+      title: "提示",
+      content: "是否删除？",
+      showCancel: true,
+      cancelText: "取消",
+      cancelColor: "#000000",
+      confirmText: "确定",
+      confirmColor: "#3CC51F",
+      success: result => {
+        if (result.confirm) {
+          wx.showToast({
+            title: "删除成功",
+            icon: "success",
+            image: "",
+            duration: 1500,
+            mask: false,
+            success: result => {
+              wx.reLaunch({
+                url: "/pages/task/index"
+              });
+            },
+            fail: () => {},
+            complete: () => {}
+          });
+        }
+      },
+      fail: () => {},
+      complete: () => {}
+    });
+  }
 });
