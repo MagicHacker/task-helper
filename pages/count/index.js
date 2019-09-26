@@ -1,6 +1,9 @@
 const wxCharts = require("../../utils/wxcharts-min.js");
 Page({
-  data: {},
+  data: {
+    date: "周",
+    timeDate: "上周"
+  },
   //options(Object)
   onLoad: function(options) {},
   onReady: function() {},
@@ -40,5 +43,16 @@ Page({
   onShareAppMessage: function() {},
   onPageScroll: function() {},
   //item(index,pagePath,text)
-  onTabItemTap: function(item) {}
+  onTabItemTap: function(item) {},
+  // 切换导航栏
+  chooseDate(event) {
+    this.setData({
+      date: event.target.dataset.date
+    });
+  },
+  chooseTime(event) {
+    this.setData({
+      timeDate: event.target.dataset.date
+    });
+  }
 });

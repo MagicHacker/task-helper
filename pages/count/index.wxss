@@ -41,7 +41,6 @@
 .count-next {
   width: 70rpx;
   height: 100%;
-  border-bottom: 8rpx solid #000;
   margin-right: 30rpx;
 }
 .count-hour-list {
@@ -93,4 +92,11 @@
   top: 50%;
   margin-left: -100rpx;
   margin-top: -40rpx;
+}
+.time-active {
+  border-bottom: 8rpx solid #000;
+}
+.navbar-active {
+  background-color: #000;
+  color: #fddb43;
 }
