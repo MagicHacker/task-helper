@@ -69,7 +69,7 @@
             </picker>
         </view>
         <view class="task-detail-item">
-            <text>项目类型</text>
+            <text>任务类型</text>
             <input class="task-type" type="text" value="{{taskType}}" placeholder="请填写" bindconfirm="getTaskType" />
         </view>
         <view class="task-detail-item">

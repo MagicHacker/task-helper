@@ -15,7 +15,7 @@
             </view>
         </view>
     </view>
-    <block wx:if="{{true}}">
+    <block wx:if="{{false}}">
         <view class="detail-none">~暂无数据~</view>
     </block>
     <block wx:else>

@@ -17,7 +17,7 @@
             </picker>
         </view>
         <view class="task-detail-item">
-            <view>项目类型</view>
+            <view>任务类型</view>
             <input type="text" class="task-project-type" placeholder="开发" />
         </view>
         <view class="task-detail-item">
