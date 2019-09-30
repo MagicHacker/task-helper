@@ -1,13 +1,19 @@
 //Page Object
+const api = require("../../api/index");
 Page({
   data: {
-    taskList: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    // taskList: []
+    taskList: []
   },
   //options(Object)
   onLoad: function(options) {},
   onReady: function() {},
-  onShow: function() {},
+  onShow: function() {
+    api.request("http://localhost:8080/task/getLists", {}, "GET").then(res => {
+      this.setData({
+        taskList: res.data.taskLists
+      });
+    });
+  },
   onHide: function() {},
   onUnload: function() {},
   onPullDownRefresh: function() {},
