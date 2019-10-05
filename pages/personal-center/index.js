@@ -1,10 +1,12 @@
-//Page Object
+const api = require("../../api/index");
+const baseURI = require("../../api/base");
+const util = require("../../utils/util");
 Page({
   data: {
     avatarUrl: null,
-    nickName: ""
+    nickName: "",
+    userId: 0
   },
-  //options(Object)
   onLoad: function(options) {},
   onReady: function() {},
   onShow: function() {},
@@ -18,12 +20,30 @@ Page({
   onTabItemTap: function(item) {},
   // 获取用户授权信息
   getUserInfo() {
+    const uuid = util.createUUid();
     wx.getUserInfo({
       success: res => {
-        this.setData({
-          avatarUrl: res.userInfo.avatarUrl,
-          nickName: res.userInfo.nickName
-        });
+        // 向数据库插入一条用户数据
+        api
+          .request(
+            baseURI + "/task/add/user",
+            {
+              userId: uuid,
+              avatar: res.userInfo.avatarUrl,
+              nickName: res.userInfo.nickName,
+              gender: res.userInfo.gender
+            },
+            "POST"
+          )
+          .then(resData => {
+            if (resData) {
+              this.setData({
+                userId: uuid,
+                avatarUrl: res.userInfo.avatarUrl,
+                nickName: res.userInfo.nickName
+              });
+            }
+          });
       }
     });
   }

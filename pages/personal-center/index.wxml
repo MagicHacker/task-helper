@@ -11,7 +11,7 @@
             <image class="personal-image" src="/images/id.svg" />
             <view class="personal-list-content border-bottom">
                 <text>ID号码</text>
-                <text>231677</text>
+                <text>{{userId}}</text>
             </view>
         </view>
         <view class="personal-list">
@@ -21,8 +21,15 @@
                 <text>男</text>
             </view>
         </view>
+        <view class="personal-list">
+            <image class="personal-image" src="/images/wechat.svg" />
+            <view class="personal-list-content">
+                <text>微信名</text>
+                <text>{{nickName}}</text>
+            </view>
+        </view>
     </view>
-    <view class="personal-message">
+    <!-- <view class="personal-message">
         <view class="personal-list">
             <image class="personal-image" src="/images/phone.svg" />
             <view class="personal-list-content border-bottom">
@@ -37,5 +44,5 @@
                 <text>{{nickName}}</text>
             </view>
         </view>
-    </view>
+    </view> -->
 </view>
