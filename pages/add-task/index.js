@@ -1,4 +1,6 @@
 //Page Object
+const api = require("../../api/index");
+const baseURI = require("../../api/base");
 Page({
   data: {
     startDate: "请选择",
@@ -58,19 +60,38 @@ Page({
   },
   // 保存任务
   saveTask() {
-    wx.showToast({
-      title: "保存成功",
-      icon: "success",
-      image: "",
-      duration: 1500,
-      mask: false,
-      success: result => {
-        wx.reLaunch({
-          url: "/pages/task/index"
-        });
-      },
-      fail: () => {},
-      complete: () => {}
-    });
+    const userId = wx.getStorageSync("userId");
+    api
+      .request(
+        baseURI + "/task/add/taskItem",
+        {
+          taskName: this.data.taskName,
+          taskType: this.data.taskType,
+          taskHour: Number(this.data.estimateHour),
+          taskDes: this.data.taskDescription,
+          userId,
+          startDate: this.data.startDate,
+          endDate: this.data.endDate
+        },
+        "POST"
+      )
+      .then(res => {
+        if (res.data) {
+          wx.showToast({
+            title: "保存成功",
+            icon: "success",
+            image: "",
+            duration: 1500,
+            mask: false,
+            success: result => {
+              wx.reLaunch({
+                url: "/pages/task/index"
+              });
+            },
+            fail: () => {},
+            complete: () => {}
+          });
+        }
+      });
   }
 });

@@ -54,7 +54,7 @@
     <view class="task-detail-list">
         <view class="task-detail-item">
             <text>任务名称</text>
-            <input class="task-name" type="text" value="{{taskName}}" placeholder="请填写" bindconfirm="getTaskName" />
+            <input class="task-name" type="text" value="{{taskName}}" placeholder="请填写" bindblur="getTaskName" />
         </view>
         <view class="task-detail-item">
             <text>开始日期</text>
@@ -70,15 +70,15 @@
         </view>
         <view class="task-detail-item">
             <text>任务类型</text>
-            <input class="task-type" type="text" value="{{taskType}}" placeholder="请填写" bindconfirm="getTaskType" />
+            <input class="task-type" type="text" value="{{taskType}}" placeholder="请填写" bindblur="getTaskType" />
         </view>
         <view class="task-detail-item">
             <text>预计耗时</text>
-            <input class="task-hour" type="text" value="{{estimateHour}}" placeholder="请填写" bindconfirm="getEstimateHour" />
+            <input class="task-hour" type="text" value="{{estimateHour}}" placeholder="小时" bindblur="getEstimateHour" />
         </view>
         <view class="task-detail-item">
             <text>任务描述</text>
-            <textarea class="task-description" value="{{taskDescription}}" auto-height="true" cols="25" rows="10" placeholder="请填写" bindconfirm="getTaskDescription"></textarea>
+            <textarea class="task-description" value="{{taskDescription}}" auto-height="true" cols="25" rows="10" placeholder="请填写" bindblur="getTaskDescription"></textarea>
         </view>
     </view>
     <view class="task-save" bindtap="saveTask">保存</view>
