@@ -21,6 +21,15 @@ Page({
   // 获取用户授权信息
   getUserInfo() {
     const uuid = util.createUUid();
+    // 点击获取授权信息时将userId保存
+    wx.setStorage({
+      key: "userId",
+      data: uuid,
+      success: result => {},
+      fail: () => {},
+      complete: () => {}
+    });
+
     wx.getUserInfo({
       success: res => {
         // 向数据库插入一条用户数据
@@ -36,7 +45,7 @@ Page({
             "POST"
           )
           .then(resData => {
-            if (resData) {
+            if (resData.data) {
               this.setData({
                 userId: uuid,
                 avatarUrl: res.userInfo.avatarUrl,
