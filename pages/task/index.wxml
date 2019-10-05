@@ -3,10 +3,10 @@
         <view class="task-none">~暂无数据请添加~</view>
     </block>
     <block wx:else>
-        <view class="task-list" wx:for="{{taskList}}" wx:key="*this" bindtap="navigateToDetail">
+        <view class="task-list" wx:for="{{taskList}}" wx:key="*this" bindtap="navigateToDetail" data-id="{{taskId}}">
             <view class="task-content">
                 <view class="task-order">{{index < 9 ? '0' + (index+ 1) : index + 1}}</view>
-                <view class="task-title">{{item.taskName}}</view>
+                <view class="task-title">{{item.task_name}}</view>
                 <image class="task-right" src="/images/arrow-right.svg" lazy-load="false" />
             </view>
             <view class="task-line"></view>
