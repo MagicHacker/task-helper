@@ -13,11 +13,6 @@ Page({
     api
       .request("http://localhost:8080/task/getLists", { userId }, "GET")
       .then(res => {
-        res.data.forEach(item => {
-          this.setData({
-            taskId: item.id
-          });
-        });
         this.setData({
           taskList: res.data
         });
