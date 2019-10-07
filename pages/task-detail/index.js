@@ -10,8 +10,7 @@ Page({
     taskType: "",
     taskHour: 0,
     actualHour: 0,
-    taskDes: "",
-    id: 0
+    taskDes: ""
   },
   //options(Object)
   onLoad: function(options) {
@@ -31,8 +30,7 @@ Page({
           taskType: res.data[0].task_type,
           taskHour: res.data[0].task_hour,
           actualHour: res.data[0].actual_hour,
-          taskDes: res.data[0].task_des,
-          id: res.data[0].id
+          taskDes: res.data[0].task_des
         });
       });
   },
@@ -94,12 +92,12 @@ Page({
         {
           taskName: this.data.taskName,
           taskType: this.data.taskType,
-          taskHour: this.data.taskHour,
+          taskHour: Number(this.data.taskHour),
           taskDes: this.data.taskDescription,
-          id: this.data.id,
+          id: Number(this.data.taskId),
           startDate: this.data.startDate,
           endDate: this.data.endDate,
-          actualHour: this.data.actualHour
+          actualHour: Number(this.data.actualHour)
         },
         "POST"
       )
@@ -140,7 +138,7 @@ Page({
           api
             .request(
               baseURI + "/task/delete/taskItem",
-              { id: this.data.id },
+              { id: this.data.taskId },
               "DELETE"
             )
             .then(res => {
