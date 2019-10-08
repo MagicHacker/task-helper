@@ -21,11 +21,11 @@
         </view>
         <view class="count-hour-list">
             <view class="count-hour-title">项目实际耗时排行榜</view>
-            <view class="count-task-list" wx:for="{{[1,2,3]}}" wx:key="*this">
+            <view class="count-task-list" wx:for="{{itemList}}" wx:key="*this">
                 <image class="count-task-img" src="/images/design.svg" />
                 <view class="count-task-content">
-                    <view>不知道的任务</view>
-                    <view>28.0</view>
+                    <view>{{item.task_name}}</view>
+                    <view>{{item.actual_hour}}</view>
                 </view>
             </view>
         </view>
