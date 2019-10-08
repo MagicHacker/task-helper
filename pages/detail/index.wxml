@@ -6,30 +6,23 @@
         </picker>
         <view class="detail-use-time">
             <view>
-                <view>预计耗时</view>
-                <view>8.5</view>
+                <view>预计总耗时</view>
+                <view>{{exceptedHours}}</view>
             </view>
             <view>
-                <view>实际耗时</view>
-                <view>382.5</view>
+                <view>实际总耗时</view>
+                <view>{{actualHours}}</view>
             </view>
         </view>
     </view>
-    <block wx:if="{{false}}">
+    <block wx:if="{{detailLists.length === 0}}">
         <view class="detail-none">~暂无数据~</view>
     </block>
     <block wx:else>
         <view class="detail-content" wx:for="{{detailLists}}" wx:key="*this">
             <view class="detail-date">
-                <view>{{item.date}}</view>
-                <view>实际耗时：{{item.hour}}</view>
-            </view>
-            <view class="detail-list" wx:for="{{item.lists}}" wx:key="*this" wx:for-item="itemList">
-                <image class="detail-image" src="/images/make.svg" />
-                <view class="detail-list-item">
-                    <view class="detail-title">{{itemList.taskName}}</view>
-                    <view>+{{itemList.actualHours}}</view>
-                </view>
+                <view>{{item.task_name}}</view>
+                <view>实际耗时：{{item.actual_hour}}</view>
             </view>
         </view>
     </block>

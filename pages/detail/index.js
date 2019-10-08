@@ -1,33 +1,22 @@
 //Page Object
 const api = require("../../api/index");
+const util = require("../../utils/util");
 Page({
   data: {
     detailLists: [],
-    date: "选择时间"
+    date: "",
+    exceptedHours: 0,
+    actualHours: 0
   },
   //options(Object)
-  onLoad: function(options) {},
+  onLoad: function(options) {
+    this.setData({
+      date: util.currentDate()
+    });
+  },
   onReady: function() {},
   onShow: function() {
-    api
-      .request("http://localhost:8080/detail/getLists", {}, "GET")
-      .then(res => {
-        const { detailLists } = res.data;
-        const hour = detailLists.map(val => {
-          return val.lists.reduce((total, currentVal) => {
-            return (
-              (total.actualHours ? total.actualHours : total) +
-              currentVal.actualHours
-            );
-          });
-        });
-        const lists = detailLists.map((item, index) => {
-          return Object.assign({}, item, { hour: hour[index] });
-        });
-        this.setData({
-          detailLists: lists
-        });
-      });
+    this.fetchData();
   },
   onHide: function() {},
   onUnload: function() {},
@@ -42,5 +31,29 @@ Page({
     this.setData({
       date: e.detail.value
     });
+    this.fetchData();
+  },
+  // 拉取数据
+  fetchData() {
+    const userId = wx.getStorageSync("userId");
+    api
+      .request(
+        "http://localhost:8080/detail/getLists",
+        { startDate: this.data.date, userId },
+        "GET"
+      )
+      .then(res => {
+        let excepted_hours = 0;
+        let actual_hours = 0;
+        res.data.forEach(item => {
+          excepted_hours += item.task_hour;
+          actual_hours += item.actual_hour;
+        });
+        this.setData({
+          detailLists: res.data,
+          exceptedHours: excepted_hours,
+          actualHours: actual_hours
+        });
+      });
   }
 });
