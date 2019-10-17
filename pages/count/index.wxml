@@ -4,7 +4,7 @@
         <view class="count-btn {{date === '月' ? 'navbar-active': ''}}" data-date="月">月</view>
         <view class="count-btn {{date === '年' ? 'navbar-active': ''}}" data-date="年">年</view>
     </view>
-    <block wx:if="{{false}}">
+    <block wx:if="{{itemList.length === 0}}">
         <view class="count-none">~暂无数据~</view>
     </block>
     <block wx:else>

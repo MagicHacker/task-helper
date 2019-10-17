@@ -1,5 +1,8 @@
 {
   "navigationBarBackgroundColor": "#FDDB43",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "统计"
+  "navigationBarTitleText": "统计",
+  "usingComponents": {
+    "count-item": "../../components/count-item/index"
+  }
 }
