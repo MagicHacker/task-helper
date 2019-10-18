@@ -64,6 +64,9 @@
   margin-left: -100rpx;
   margin-top: -40rpx;
 }
-.time-active {
-  border-bottom: 8rpx solid #000;
+.time-active:after {
+  content: "";
+  display: block;
+  border-bottom: 6rpx solid #000;
+  margin-top: -4rpx;
 }
