@@ -8,7 +8,8 @@
         <view class="count-none">~暂无数据~</view>
     </block>
     <block wx:else>
-        <view class="count-time-navBar" bindtap="chooseTime">
+        <count-item date="{{date}}"></count-item>
+        <!-- <view class="count-time-navBar" bindtap="chooseTime">
             <view class="count-previous {{timeDate === '上周' ? 'time-active': ''}}" data-date="上周">
                 上周
             </view>
@@ -28,6 +29,6 @@
                     <view>{{item.actual_hour}}</view>
                 </view>
             </view>
-        </view>
+        </view> -->
     </block>
 </view>
