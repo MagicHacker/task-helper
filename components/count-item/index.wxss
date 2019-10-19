@@ -66,7 +66,8 @@
 }
 .time-active:after {
   content: "";
+  width: 60rpx;
   display: block;
   border-bottom: 6rpx solid #000;
-  margin-top: -4rpx;
+  margin: -4rpx auto 0rpx;
 }
