@@ -14,6 +14,12 @@ Component({
           previousText: value === "年" ? `去${value}` : `上${value}`,
           nextText: value === "年" ? `今${value}` : `本${value}`
         });
+        this.fetchData(
+          this.handleDay(this.data.previousText),
+          this.data.previousText
+        ).then(data => {
+          this.pintCharts(data);
+        });
       }
     }
   },
@@ -30,16 +36,20 @@ Component({
       this.setData({
         isNext: isSwitch
       });
+      this.fetchData(this.handleDay(timeDate), timeDate).then(data => {
+        this.pintCharts(data);
+      });
     },
     // 拉取数据
-    fetchData(date) {
+    fetchData(date, dateType) {
       return new Promise((resolve, reject) => {
         api
           .request(
             baseURI + "/count/getLists",
             {
               startDate: date,
-              userId: 39442
+              userId: 39442,
+              dateType
             },
             "GET"
           )
@@ -54,14 +64,14 @@ Component({
       });
     },
     // 处理日期 TODO: 待优化
-    handleDate() {
+    handleDay(dateText) {
       const time = new Date(util.currentDate());
       const month =
         time.getMonth() >= 0 && time.getMonth() <= 8
           ? "0" + (time.getMonth() + 1)
           : time.getMonth() + 1;
       const day = time.getDate() < 9 ? "0" + time.getDate() : time.getDate();
-      return this.data.previousText === "本周"
+      return dateText === "本周"
         ? util.currentDate()
         : `${time.getFullYear()}-${month}-${
             Number(day) - 7 < 9 ? "0" + (Number(day) - 7) : Number(day) - 7
@@ -109,29 +119,21 @@ Component({
   lifetimes: {
     created: function() {},
     attached: function() {},
-    ready: function() {
-      // this.fetchData(this.handleDate()).then(data => {
-      //   this.pintCharts(data);
-      // });
-    },
+    ready: function() {},
     moved: function() {},
     detached: function() {}
   },
   // 组件所在页面的生命周期
   pageLifetimes: {
     show() {
-      this.fetchData(this.handleDate()).then(data => {
+      this.fetchData(this.handleDay(), "上周").then(data => {
         this.pintCharts(data);
       });
     }
   },
   created: function() {},
   attached: function() {},
-  ready: function() {
-    // this.fetchData(this.handleDate()).then(data => {
-    //   this.pintCharts(data);
-    // });
-  },
+  ready: function() {},
   moved: function() {},
   detached: function() {}
 });

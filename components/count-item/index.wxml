@@ -1,16 +1,16 @@
 <view>
+    <view class="count-time-navBar" bindtap="chooseTime">
+        <view class="count-previous {{!isNext ? 'time-active': ''}}" data-date="{{previousText}}">
+            {{previousText}}
+        </view>
+        <view class="count-next {{isNext ? 'time-active': ''}}" data-date="{{nextText}}">
+            {{nextText}}
+        </view>
+    </view>
     <block wx:if="{{itemList.length === 0}}">
         <view class="count-none">~暂无数据~</view>
     </block>
     <block wx:else>
-        <view class="count-time-navBar" bindtap="chooseTime">
-            <view class="count-previous {{!isNext ? 'time-active': ''}}" data-date="{{previousText}}">
-                {{previousText}}
-            </view>
-            <view class="count-next {{isNext ? 'time-active': ''}}" data-date="{{nextText}}">
-                {{nextText}}
-            </view>
-        </view>
         <view class="count-chart">
             <canvas class="count-canvas" canvas-id="count-hours"></canvas>
         </view>
