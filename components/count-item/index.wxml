@@ -1,21 +1,28 @@
 <view>
-    <view class="count-time-navBar" bindtap="chooseTime">
-        <view class="count-previous {{timeDate === '上周' ? 'time-active': ''}}" data-date="上周">
-            上周
-        </view>
-        <view class="count-next {{timeDate === '本周' ? 'time-active': ''}}" data-date="本周">本周</view>
-    </view>
-    <view class="count-chart">
-        <canvas class="count-canvas" canvas-id="count-hours"></canvas>
-    </view>
-    <view class="count-hour-list">
-        <view class="count-hour-title">项目实际耗时排行榜</view>
-        <view class="count-task-list" wx:for="{{itemList}}" wx:key="*this">
-            <image class="count-task-img" src="/images/design.svg" />
-            <view class="count-task-content">
-                <view>{{item.task_name}}</view>
-                <view>{{item.actual_hour}}</view>
+    <block wx:if="{{itemList.length === 0}}">
+        <view class="count-none">~暂无数据~</view>
+    </block>
+    <block wx:else>
+        <view class="count-time-navBar" bindtap="chooseTime">
+            <view class="count-previous {{!isNext ? 'time-active': ''}}" data-date="{{previousText}}">
+                {{previousText}}
+            </view>
+            <view class="count-next {{isNext ? 'time-active': ''}}" data-date="{{nextText}}">
+                {{nextText}}
             </view>
         </view>
-    </view>
+        <view class="count-chart">
+            <canvas class="count-canvas" canvas-id="count-hours"></canvas>
+        </view>
+        <view class="count-hour-list">
+            <view class="count-hour-title">项目实际耗时排行榜</view>
+            <view class="count-task-list" wx:for="{{itemList}}" wx:key="*this">
+                <image class="count-task-img" src="/images/design.svg" />
+                <view class="count-task-content">
+                    <view>{{item.task_name}}</view>
+                    <view>{{item.actual_hour}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
 </view>
