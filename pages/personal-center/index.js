@@ -5,7 +5,7 @@ Page({
   data: {
     avatarUrl: null,
     nickName: "",
-    userId: 0
+    userId: ""
   },
   onLoad: function(options) {},
   onReady: function() {},
@@ -18,41 +18,51 @@ Page({
   onPageScroll: function() {},
   //item(index,pagePath,text)
   onTabItemTap: function(item) {},
-  // 获取用户授权信息
+  // 在未授权的情况下获取用户授权信息
   getUserInfo() {
-    const uuid = util.createUUid();
-    // 点击获取授权信息时将userId保存
-    wx.setStorage({
-      key: "userId",
-      data: uuid,
-      success: result => {},
-      fail: () => {},
-      complete: () => {}
-    });
-
+    const userId = wx.getStorageSync("userId");
+    const userInfo = wx.getStorageSync("userInfo");
     wx.getUserInfo({
       success: res => {
-        // 向数据库插入一条用户数据
-        api
-          .request(
-            baseURI + "/task/add/user",
-            {
-              userId: uuid,
-              avatar: res.userInfo.avatarUrl,
-              nickName: res.userInfo.nickName,
-              gender: res.userInfo.gender
-            },
-            "POST"
-          )
-          .then(resData => {
-            if (resData.data) {
-              this.setData({
-                userId: uuid,
-                avatarUrl: res.userInfo.avatarUrl,
-                nickName: res.userInfo.nickName
-              });
-            }
+        // storage没有数据就添加，并且向数据库插入一条用户数据
+        if (!userInfo) {
+          api
+            .request(
+              baseURI + "/task/add/user",
+              {
+                userId: userId.substring(0, 6),
+                avatar: res.userInfo.avatarUrl,
+                nickName: res.userInfo.nickName,
+                gender: res.userInfo.gender
+              },
+              "POST"
+            )
+            .then(resData => {
+              if (resData.data) {
+                this.setData({
+                  userId: userId.substring(0, 6),
+                  avatarUrl: res.userInfo.avatarUrl,
+                  nickName: res.userInfo.nickName
+                });
+                wx.setStorage({
+                  key: "userInfo",
+                  data: JSON.stringify({
+                    userId: userId.substring(0, 6),
+                    ...res.userInfo
+                  }),
+                  success: result => {},
+                  fail: () => {},
+                  complete: () => {}
+                });
+              }
+            });
+        } else {
+          this.setData({
+            userId: JSON.parse(userInfo).userId,
+            avatarUrl: JSON.parse(userInfo).avatarUrl,
+            nickName: JSON.parse(userInfo).nickName
           });
+        }
       },
       fail: res => {
         wx.showModal({
