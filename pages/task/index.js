@@ -34,8 +34,27 @@ Page({
   },
   // 添加任务
   addTask() {
-    wx.navigateTo({
-      url: "/pages/add-task/index"
+    // 添加之前先校验用户是否授权
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting["scope.userInfo"]) {
+          wx.navigateTo({
+            url: "/pages/add-task/index"
+          });
+        } else {
+          wx.showModal({
+            title: "提示",
+            content: "只有允许授权才能进一步使用，请允许授权哦~",
+            showCancel: false,
+            cancelText: "取消",
+            confirmText: "确定",
+            confirmColor: "#f37c7c",
+            success: result => {},
+            fail: () => {}
+          });
+        }
+      },
+      fail: () => {}
     });
   }
 });
