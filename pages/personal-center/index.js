@@ -53,6 +53,20 @@ Page({
               });
             }
           });
+      },
+      fail: res => {
+        wx.showModal({
+          title: "提示",
+          content: "只有允许授权才能进一步使用，请允许授权哦~",
+          showCancel: false,
+          cancelText: "取消",
+          cancelColor: "#000000",
+          confirmText: "确定",
+          confirmColor: "#f37c7c",
+          success: result => {},
+          fail: () => {},
+          complete: () => {}
+        });
       }
     });
   }
